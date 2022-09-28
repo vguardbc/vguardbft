@@ -1,4 +1,5 @@
 package main
 
-//configure log format
+// Log format
 
+// This function has been moved to the storage module.

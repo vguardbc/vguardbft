@@ -9,7 +9,11 @@ import (
 )
 
 // startConsensusPhaseA follows a policy to conduct consensus.
-//
+// The current V-Guard consensus follows a timing-based policy that periodically initiates consensus instances
+// to achieve consensus for ordered log entires.
+// The time internal is set by ConsensusInterval (default 100ms). I.e., for every 100ms, regardless of how many entries are
+// appended to the total order log, a consensus instance will start to handle consensus. RangeId is the consensus instance ID.
+// If no entry has been ordered in StopFlag (integer) consensus instances, the consensus phase halts. 
 func startConsensusPhaseA() {
 	counter := 0
 	stopFlag := 0

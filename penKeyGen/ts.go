@@ -1,14 +1,3 @@
-// Package tbls implements the (t,n)-threshold Boneh-Lynn-Shacham signature
-// scheme. During setup a group of n participants runs a distributed key
-// generation algorithm (see kyber/share/dkg) to compute a joint public signing
-// key X and one secret key share xi for each of the n signers. To compute a
-// signature S on a message m, at least t ouf of n signers have to provide
-// partial (BLS) signatures Si on m using their individual key shares xi which
-// can then be used to recover the full (regular) BLS signature S via Lagrange
-// interpolation. The signature S can be verified with the initially
-// established group key X. Signatures are points on curve G1 and public keys
-// are points on curve G2.
-
 package penKeyGen
 
 import (

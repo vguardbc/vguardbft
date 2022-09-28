@@ -30,9 +30,11 @@ If the proposer fails, no data will be produced, and its consensus service simpl
 This single failure has no effect on other vehicles' instances (if any). 
 
 ### Booth -- membership descriptor 
-V-Guard allows consensus to be reached in different memberships (sets of vehicles), named **booths**. 
+V-Guard allows consensus to be reached in different memberships (sets of vehicles), namely **booths**. 
 A booth must include the proposer (V<sub>P</sub>), pivot validator (V<sub>π</sub>), and at least two other members (vehicles).
 An illustration of constructing booths is shown below.
+
+
 ![](./docs/booths.gif)
 
 ## Try the Current Version

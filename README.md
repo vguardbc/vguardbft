@@ -1,6 +1,8 @@
 <h1 align="center"> V-Guard: A Fast, Dynamic, and Versatile Permissioned Blockchain Framework for V2X Networks </h1>
 
-## About V-Guard
+## About this repository
+
+*This repository contains the code of V-Guard's core consensus module, the evaluation result of which has been shown in the submission. The code of the storage and gossip modules will be published after the review process.*
 
 V-Guard is a new permissioned blockchain framework that is able to operate 
 under dynamic (unstable) memberships; it targets the problem in V2X networks where 

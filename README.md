@@ -50,11 +50,15 @@ This project uses two external packages for threshold signatures and logging.
 ### Run V-Guard instances locally
 Below shows an example of running a four-vehicle V-Guard system consisting of one proposer and three validators 
 (one validator as consensus pivot and the other two validators are vehicle validators enrolled in the current quorum)
+    
+    # compile
+    go build ../vguardbft
+
     # run a proposer
-    ./scripts/run.sh 0 0
+    ./scripts/run.sh 0 0 // $1=leaderID; $2=operating role (leader)
 
     # run validators
-    ./scripts/run.sh 1 1 # $1=validator Id; $2=operating role
+    ./scripts/run.sh 1 1 //$1=validator ID; $2=operating role (validator)
     ./scripts/run.sh 2 1
     ./scripts/run.sh 3 1
 

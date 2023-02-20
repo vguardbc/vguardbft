@@ -34,11 +34,11 @@ Consensus instances are executed periodically. They operate as "shuttle buses" w
 ### Install dependencies
 GoLang should have been properly installed with `GOPATH` and `GOROOT`. The GoLang version should be at least `go1.17.6`. In addition, three external packages were used (check out `go.mod`).
 
-    # threshold signatures
+    // threshold signatures
     go get go.dedis.ch/kyber
-    # logging
+    // logging
     go get github.com/sirupsen/logrus
-    # some math packages
+    // some math packages
     go get gonum.org/v1/gonum/
 
 ### Run V-Guard instances locally
@@ -75,7 +75,7 @@ Below shows an example of running a V-Guard instance with a booth of size 4 and 
     // two parameters: $1=ID; $2=role (proposer: 0; validator: 1)
     ./scripts/run.sh 0 0 // this starts a proposer
 
-    # run validators
+    // run 5 validators
     ./scripts/run.sh 1 1 // this starts a validator whose ID=1
     ./scripts/run.sh 2 1 // this starts a validator whose ID=2
     ./scripts/run.sh 3 1

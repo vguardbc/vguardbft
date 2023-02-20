@@ -46,7 +46,7 @@ GoLang should have been properly installed with `GOPATH` and `GOROOT`. The GoLan
 Below shows an example of running a V-Guard instance with a booth size of 4 with 6 initial available connections.
 The quorum size of booths (of size 4) is 3, and threshold is set to 2, as the proposer is always included.
     
-    // We assume the folder containing the downloaded code is called "vguard"
+    // We assume the folder containing the downloaded code is called "vguardbft"
     // First move the key generator outside of the V-Guard package.
     mv -r keyGen ../
     
@@ -62,10 +62,10 @@ The quorum size of booths (of size 4) is 3, and threshold is set to 2, as the pr
     // Privates keys: pri_#id.dupe
     // Public key: vguard_pub.dupe
     // Now move the key folder to the VGuard folder
-    cp -r key ../vguard/
+    cp -r key ../vguardbft/
     
-    // Compile the code in "vguard"
-    cd ../vguard
+    // Compile the code in "vguardbft"
+    cd ../vguardbft
     ./scripts/build.sh
     
     // Now we can run a V-Guard instance

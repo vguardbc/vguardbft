@@ -48,7 +48,7 @@ The quorum size of booths (of size 4) is 3, and threshold is set to 2, as the pr
     
     // We assume the folder containing the downloaded code is called "vguardbft"
     // First move the key generator outside of the V-Guard package.
-    mv -r keyGen ../
+    mv keyGen ../
     
     // Then, go to the keyGen folder to generate keys
     cd ../keyGen
@@ -62,13 +62,16 @@ The quorum size of booths (of size 4) is 3, and threshold is set to 2, as the pr
     // Privates keys: pri_#id.dupe
     // Public key: vguard_pub.dupe
     // Now move the key folder to the VGuard folder
-    cp -r key ../vguardbft/
+    cp -r keys ../vguardbft/
     
     // Compile the code in "vguardbft"
     cd ../vguardbft
     ./scripts/build.sh
+
+    // Next, create a log folder
+    mkdir logs
     
-    // Now we can run a V-Guard instance
+    // Finally, we can start running a V-Guard instance
     // First, run the proposer; a proposer always has the ID of 0
     // The script takes two parameters: $1=ServerID; $2= role (leader: 0; validator: 1)
     ./scripts/run.sh 0 0 // this starts a proposer

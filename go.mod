@@ -1,4 +1,4 @@
-module vguard
+module vguardbft
 
 go 1.17
 

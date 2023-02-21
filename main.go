@@ -53,6 +53,10 @@ func init() {
 	fmt.Printf("| Booth size\t| %3d\t|\n", BoothSize)
 	fmt.Printf("| Quorum size\t| %3d\t|\n", Quorum)
 	fmt.Printf("-------------------------------\n")
+	if PlainStorage {
+		fmt.Printf("|-- Log shows at ./logs/s%d --|\n", ServerID)
+		fmt.Printf("-------------------------------\n")
+	}
 }
 
 func main() {

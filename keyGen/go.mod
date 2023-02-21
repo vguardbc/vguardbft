@@ -1,4 +1,4 @@
-module tsGen
+module keyGen
 
 go 1.17
 

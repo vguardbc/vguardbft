@@ -7,11 +7,11 @@ import (
 	"sync"
 )
 
-var requestQueue = []chan *Proposal{}
+var requestQueue []chan *Proposal
 
 var concierge = struct {
 	n [NOP][]*ConnDock // Three phases
-	//b  map[int][]int          //map[booth#] int{server blockIDs in this booth}
+	//b  map[int][]int //map[booth#] int{server blockIDs in this booth}
 	mu sync.RWMutex
 }{}
 
@@ -23,18 +23,11 @@ func initConns(numOfServers int) {
 		concierge.n[i] = make([]*ConnDock, numOfServers)
 	}
 
-	// initialize dialogconns
+	// initialize dialog conns
 	for i := 0; i < len(dialogMgr.conns); i++ {
 		dialogMgr.conns[i] = make(map[ServerId]ConnDock)
 	}
 }
-
-//type connDock struct {
-//	serverId ServerId
-//	conn     *net.Conn
-//	enc      *gob.Encoder
-//	dec      *gob.Decoder
-//}
 
 var dialogMgr = struct {
 	sync.RWMutex

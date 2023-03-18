@@ -10,8 +10,16 @@ func startConsensusPhaseA() {
 
 	for {
 		commitBoothID := getBoothID()
-		//commitBoothID := getBoothID() + 1
-		//commitBoothID := 5
+
+		switch BoothMode {
+		case BoothModeOCSB:
+
+		case BoothModeOCDBWOP:
+			commitBoothID = BoothIDOfModeOCDBWOP
+		case BoothModeOCDBNOP:
+			commitBoothID = BoothIDOfModeOCDBNOP
+		}
+
 		commitBooth := booMgr.b[commitBoothID]
 		time.Sleep(time.Duration(ConsInterval) * time.Millisecond)
 

@@ -200,7 +200,6 @@ func asyncHandleOBReply(m *ValidatorOPAReply, sid ServerId) {
 		Hash: blockOrderFrag.hash,
 	}
 
-	//incrementOrderIndex()
 	vgrec.Add(m.BlockId)
 
 	if PerfMetres {

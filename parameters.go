@@ -28,6 +28,22 @@ const (
 	DialPortCPB
 )
 
+// Below are three booth modes for testing the performance of VG in dynamic membership
+// changes. I.e., booths may be different in ordering and consensus instances.
+const (
+	// BoothModeOCSB where Ordering and Consensus instances
+	// take place in the Same Booth.
+	BoothModeOCSB = iota
+	// BoothModeOCDBWOP where Ordering and Consensus instances
+	// take place in Different Booths With Overlapping Participants.
+	BoothModeOCDBWOP
+	// BoothModeOCDBNOP where Ordering and Consensus instances
+	// take place in Different Booths with No Overlapping Participants.
+	BoothModeOCDBNOP
+)
+
+var boothFromMode [3]int
+
 var cmdPhase = []string{"OPA", "OPB", "CPA", "CPB"}
 var rpyPhase = []string{"R-OPA", "R-OPB", "R-CPA", "R-CPB"}
 
@@ -86,6 +102,13 @@ var (
 	ConsInterval     int
 	ConfPath         string
 
+	// BoothMode includes options for changing the booth dynamicity in evaluation
+	BoothMode int
+
+	BoothIDOfModeOCSB    int
+	BoothIDOfModeOCDBWOP int
+	BoothIDOfModeOCDBNOP int
+
 	// Below parameters are used for catering factor evaluation.
 	//SlowModeCycleNum    int
 	//SleepTimeInSlowMode int
@@ -111,6 +134,11 @@ func loadCmdParameters() {
 	flag.IntVar(&ConsInterval, "ci", 500, "consensus instance interval (ms)")
 	flag.IntVar(&LogLevel, "log", InfoLevel, "0: Panic | 1: Fatal | 2: Error | 3: Warn | 4: Info | 5: Debug")
 	flag.StringVar(&ConfPath, "cfp", "./config/cluster_localhost.conf", "config file path")
+
+	flag.IntVar(&BoothMode, "bm", 2, "booth mode: 0, 1, or 2")
+	flag.IntVar(&BoothIDOfModeOCSB, "ocsb", 0, "BoothIDOfModeOCSB")
+	flag.IntVar(&BoothIDOfModeOCDBWOP, "ocdbwop", 1, "BoothIDOfModeOCDBWOP")
+	flag.IntVar(&BoothIDOfModeOCDBNOP, "ocdbnop", 5, "BoothIDOfModeOCDBNOP")
 
 	//flag.IntVar(&SlowModeCycleNum, "sm", 3, "# of cycles going in slow mode")
 	//flag.IntVar(&SleepTimeInSlowMode, "smt", 1, "slow mode cycle sleep time (second)")

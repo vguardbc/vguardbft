@@ -48,6 +48,7 @@ func parseConf(numOfServers int) {
 		if err != nil {
 			panic(err)
 		}
+
 		singleSL.Index = ServerId(i)
 
 		singleSL.Ip = row[1]

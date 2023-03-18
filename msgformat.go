@@ -1,7 +1,7 @@
 package main
 
 // This file describes the message format in VGuard. Each message is encoded and
-// decoded by gob encoders. A encoded message will be transmitted and decoded to
+// decoded by gob encoders. An encoded message will be transmitted and decoded to
 // another server. Thus, all feilds must be capitilized.
 //
 
@@ -31,7 +31,7 @@ type ProposerOPBEntry struct {
 	Booth
 	BlockId int64
 	CombSig []byte
-	//The Entries is only filled calling from ProposerCPAEntry
+	//Entries only enabled calling from ProposerCPAEntry
 	Entries map[int]Entry
 	Hash    []byte
 }

@@ -13,6 +13,11 @@ var valiConsJobStack = struct {
 	s map[int]chan int // <ConsInstID, chan 1>
 }{s: make(map[int]chan int)}
 
+var valiOrdJobStack = struct {
+	sync.RWMutex
+	s map[int64]chan int // <OrdInstID, chan 1>
+}{s: make(map[int64]chan int)}
+
 func validatingOAEntry(m *ProposerOPAEntry, encoder *gob.Encoder) {
 	log.Debugf("%s | ProposerOPBEntry received (BlockID: %d) @ %v", rpyPhase[OPA], m.BlockId, time.Now().UTC().String())
 
@@ -40,6 +45,18 @@ func validatingOAEntry(m *ProposerOPAEntry, encoder *gob.Encoder) {
 		tSig:    nil,
 		booth:   m.Booth,
 	}
+
+	valiOrdJobStack.Lock()
+	if s, ok := valiOrdJobStack.s[m.BlockId]; !ok {
+		s := make(chan int, 1)
+		valiOrdJobStack.s[m.BlockId] = s
+		valiOrdJobStack.Unlock()
+		s <- 1
+	} else {
+		valiOrdJobStack.Unlock()
+		s <- 1
+	}
+
 	cmtSnapshot.Unlock()
 
 	sig, err := PenSign(m.Hash)
@@ -98,6 +115,19 @@ func validatingOBEntry(m *ProposerOPBEntry, encoder *gob.Encoder) {
 	}
 
 	cmtSnapshot.Lock()
+	if _, ok := cmtSnapshot.m[m.BlockId]; !ok {
+
+		valiOrdJobStack.Lock()
+		if s, ok := valiOrdJobStack.s[m.BlockId]; !ok {
+			s := make(chan int, 1)
+			valiOrdJobStack.s[m.BlockId] = s
+			valiOrdJobStack.Unlock()
+			<-s
+		} else {
+			valiOrdJobStack.Unlock()
+			<-s
+		}
+	}
 	cmtSnapshot.m[m.BlockId].tSig = m.CombSig
 	cmtSnapshot.Unlock()
 

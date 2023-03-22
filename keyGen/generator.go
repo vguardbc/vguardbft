@@ -56,6 +56,7 @@ func main() {
 
 	flag.IntVar(&t, "t", 2, "Threshold")
 	flag.IntVar(&n, "n", 6, "# of participants")
+	flag.Parse()
 
 	log.Infof("KeyGen initialized, with t=%v and n=%v", t, n)
 

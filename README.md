@@ -14,7 +14,7 @@ The integration makes V-Guard achieve consensus seamlessly under changing member
 
 ### Features and Workflow
 #### Membership Management Unit (MMU)
-V-Guard develops a Membership Management Unit (MMU) that keeps track of available vehicle connections and manages membership profiles. The MMU describes a membership profile that contains a set of vehicles as a **booth**. Below illustrates the management of booths (of size 4).
+V-Guard develops a Membership Management Unit (MMU) that keeps track of available vehicle connections and manages membership profiles. The MMU describes a membership profile that contains a set of vehicles as a **booth**. Below illustrates the management of booths (of size 4) when vehicles are communicating via [Dedicated Short-Range Communication](https://en.wikipedia.org/wiki/Dedicated_short-range_communications).
 
 ![](./docs/booths.gif)
 
@@ -85,5 +85,9 @@ Below shows an example of running a V-Guard instance with a booth of size 4 and 
 
 Check out `parameters.go` for further parameters tuning.
 
-## Deployment on clusters
-The project is under a double-blind review process. We temporarily redacted the deployment details to preserve anonymity.
+## Projects using V-Guard
+| Project Name                                           | Authors                     | Features                                                              |
+|:-------------------------------------------------------|:----------------------------|:----------------------------------------------------------------------|
+| [VGuardDB](https://github.com/timchenggu123/vguard_db) | Michalis Bachras, Tim Cheng | Efficiently Storing and Accessing Data from V2X Networks Using VGuard |
+|
+

@@ -3,16 +3,27 @@
 
 ## About V-Guard
 
-V-Guard achieves high performance operating under dynamically changing memberships, targeting the problem of vehicles' arbitrary connectivity on the roads. When dealing with membership changes, traditional BFT algorithms (e.g., PBFT and HotStuff) must stop to update system configurations using additional membership management approaches, thereby suffering from severe performance degradation.
+V-Guard achieves high performance operating under dynamically changing memberships, targeting the problem of vehicles' arbitrary connectivity on the roads. When membership changes occur, traditional BFT algorithms (e.g., PBFT and HotStuff) must stop to update system configurations using additional membership management approaches, thereby suffering from severe performance degradation.
 
-In contrast, V-Guard integrates the consensus of membership management into the consensus of data transactions. Compared to traditional BFT algorithms, V-Guard not only achieves consensus for data transactions but also for their residing membership configurations.
+In contrast, V-Guard integrates the consensus of membership management into the consensus of data transactions. In a consensus process, The integration makes V-Guard achieve consensus seamlessly under changing members (e.g., with joining or leaving vehicles) and produces an immutable ledger recording traceable data transactions with their corresponding membership profiles.
 
-    # Consensus target of tradition BFT algorithms: <data transactions>
-    # Consensus target of V-Guard: <data transactions, membership profiles>
+    Consensus target of tradition BFT algorithms: <data transactions>
+    Consensus target of V-Guard: <data transactions, membership profiles>
 
-The integration makes V-Guard achieve consensus seamlessly under changing members (e.g., with joining or leaving vehicles) and produces an immutable ledger recording traceable data transactions with their corresponding membership profiles.
+Check out the paper at: https://arxiv.org/abs/2301.06210
 
-### Features and Workflow
+## Use Case
+V-Guard is a flexible blockchain platform that allows users to define their own message types. This platform enables vehicles to reach a consensus on the decisions made by their autonomous driving software. The messages can include various data, such as GPS location, speed, direction, acceleration, bearing, and more (similar categories to the data set of
+[Passive Vehicular Sensors](https://www.kaggle.com/datasets/jefmenegazzo/pvs-passive-vehicular-sensors-datasets?resource=download-directory)).
+
+V-Guard offers a solution to the trust and accountability issues associated with accident data by providing a guarantee of data accuracy and integrity. Our blockchain technology effectively addresses three key challenges that are often encountered with traditional centralized solutions:
+
+- <span style="color: indigo;">**Transparency in data management.</span>** Data is more easily accessible to drivers, thereby preventing manufacturers from monopolizing it.
+- <span style="color: indigo;">**Integrity in data management.</span>** V-Guard prevents data tampering. There is no room for manipulation or concealment of evidence by either drivers or manufacturers. V-Guard ensures that data cannot be fabricated or deleted, even if it goes against the interests of the parties involved in legal proceedings
+- <span style="color: indigo;">**Accountability in data management.</span>** V-Guard promotes data accountability and ownership protections, creating a trusted environment within the industry, and ensuring compliance with data management regulations, such as GDPR and CPRA.
+
+## Features and Workflow
+
 #### Membership Management Unit (MMU)
 V-Guard develops a Membership Management Unit (MMU) that keeps track of available vehicle connections and manages membership profiles. The MMU describes a membership profile that contains a set of vehicles as a **booth**. Below illustrates the management of booths (of size 4) when vehicles are communicating via [Dedicated Short-Range Communication](https://en.wikipedia.org/wiki/Dedicated_short-range_communications).
 
@@ -89,5 +100,3 @@ Check out `parameters.go` for further parameters tuning.
 | Project Name                                           | Authors                     | Features                                                              |
 |:-------------------------------------------------------|:----------------------------|:----------------------------------------------------------------------|
 | [VGuardDB](https://github.com/timchenggu123/vguard_db) | Michalis Bachras, Tim Cheng | Efficiently Storing and Accessing Data from V2X Networks Using VGuard |
-|
-

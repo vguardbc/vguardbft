@@ -1,4 +1,4 @@
-<h1 align="center"> V-Guard: An Efficient Permissioned Blockchain for Achieving Consensus under Dynamic Memberships in V2X Networks </h1>
+<h1 align="center"> V-Guard: An Efficient Permissioned Blockchain for Achieving Consensus under Dynamic Memberships </h1>
 
 
 ## About V-Guard
@@ -9,18 +9,6 @@ In contrast, V-Guard integrates the consensus of membership management into the 
 
     Consensus target of tradition BFT algorithms: <data transactions>
     Consensus target of V-Guard: <data transactions, membership profiles>
-
-Check out the paper at: https://arxiv.org/abs/2301.06210
-
-## Use Case
-V-Guard is a flexible blockchain platform that allows users to define their own message types. This platform enables vehicles to reach a consensus on the decisions made by their autonomous driving software. The messages can include various data, such as GPS location, speed, direction, acceleration, bearing, and more (similar categories to the data set of
-[Passive Vehicular Sensors](https://www.kaggle.com/datasets/jefmenegazzo/pvs-passive-vehicular-sensors-datasets?resource=download-directory)). Selected projects using V-Guard as the foundation for their applications can be found [here](https://github.com/vguardbc/vguardbft#projects-using-v-guard).
-
-V-Guard offers a solution to the trust and accountability issues associated with accident data by providing a guarantee of data accuracy and integrity. Our blockchain technology effectively addresses three key challenges that are often encountered with traditional centralized solutions:
-
-- <span style="color:indigo;">**Transparency in data management.</span>** Data is more easily accessible to drivers, thereby preventing manufacturers from monopolizing it.
-- <span style="color:indigo;">**Integrity in data management.</span>** V-Guard prevents data tampering. There is no room for manipulation or concealment of evidence by either drivers or manufacturers. V-Guard ensures that data cannot be fabricated or deleted, even if it goes against the interests of the parties involved in legal proceedings
-- <span style="color:indigo;">**Accountability in data management.</span>** V-Guard promotes data accountability and ownership protections, creating a trusted environment within the industry, and ensuring compliance with data management regulations, such as GDPR and CPRA.
 
 ## Features and Workflow
 
@@ -96,9 +84,19 @@ Below shows an example of running a V-Guard instance with a booth of size 4 and 
 
 Check out `parameters.go` for further parameters tuning.
 
-## Projects using V-Guard
+## Use Case
+V-Guard is a flexible blockchain platform that allows users to define their own message types. This platform enables vehicles to reach a consensus on the decisions made by their autonomous driving software. The messages can include various data, such as GPS location, speed, direction, acceleration, bearing, and more. Selected projects using V-Guard as the foundation for their applications are listed below:
+
+
 | Project Name                                                              | Authors                                | Features                                                                                                                                                                                |
 |:--------------------------------------------------------------------------|:---------------------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | [VGuardDB](https://github.com/timchenggu123/vguard_db)                    | Michalis Bachras, Tim Cheng            | VGuardDB creates a storage layer upon VGuard, making data available to all users in a structured way with read functionalities. Messaging are formatted to on-vehicle GPS sensors data. |
 | [VGuardSCM](https://github.com/anlowee/vguardbft)                         | Dixi Yao, Kai Shen, and Xiaochong Wei  | Utilize VG within the realm of Supply Chain Management, specifically with a focus on monitoring individual trucks in granular detail.                                                   |
 | [VGuard Visualization](https://github.com/LeonhardE/vguard-visualization) | Nu Zhang, Chen Zhang, and Xianxin Zeng | A visualization engine implemented using a web-based approach with a JavaScript and React-based frontend, a Flask-based web server, and a set of V-Guard instances.                     |
+
+V-Guard offers a solution to the trust and accountability issues associated with accident data by providing a guarantee of data accuracy and integrity. Our blockchain technology effectively addresses three key challenges that are often encountered with traditional centralized solutions:
+
+- <span style="color:indigo;">**Transparency in data management.</span>** Data is more easily accessible to drivers, thereby preventing manufacturers from monopolizing it.
+- <span style="color:indigo;">**Integrity in data management.</span>** V-Guard prevents data tampering. There is no room for manipulation or concealment of evidence by either drivers or manufacturers. V-Guard ensures that data cannot be fabricated or deleted, even if it goes against the interests of the parties involved in legal proceedings
+- <span style="color:indigo;">**Accountability in data management.</span>** V-Guard promotes data accountability and ownership protections, creating a trusted environment within the industry, and ensuring compliance with data management regulations, such as GDPR and CPRA.
+|

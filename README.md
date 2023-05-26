@@ -12,8 +12,17 @@ In contrast, V-Guard integrates the consensus of membership management into the 
 
 ## Features and Workflow
 
+#### About Vehicle-to-Everything (V2X) networks
+
+[Vehicle-to-Everything (V2X)](https://en.wikipedia.org/wiki/Vehicle-to-everything) is communication between a vehicle and any entity that may affect, or may be affected by, the vehicle. There are two types of V2X communication technology depending on the underlying technology being used: (1) [Dedicated Short-Range Communication (DSRC)](https://en.wikipedia.org/wiki/Dedicated_short-range_communications), which is WLAN-based, and (2) [Cellular Vehicle-to-Everything (C-V2X)](https://en.wikipedia.org/wiki/Cellular_V2X), which is cellular-based.
+
+
+- DSRC utilizes WLAN technology, enabling direct communication between vehicles (V2V) and between vehicles and traffic infrastructure (V2I). This interaction forms a vehicular ad-hoc network, establishing a connection when two V2X senders come within range of each other. WLAN technology is particularly suitable for V2X communication because of its high throughput and low latency, allowing for efficient and timely transmission of data between vehicles and infrastructure.
+
+- C-V2X uses 3GPP standardised 4G LTE or 5G mobile cellular connectivity to exchange messages between vehicles, pedestrians, and wayside traffic control devices such as traffic signals.
+
 #### Membership Management Unit (MMU)
-V-Guard develops a Membership Management Unit (MMU) that keeps track of available vehicle connections and manages membership profiles. The MMU describes a membership profile that contains a set of vehicles as a **booth**. Below illustrates the management of booths (of size 4) when vehicles are communicating via [Dedicated Short-Range Communication](https://en.wikipedia.org/wiki/Dedicated_short-range_communications).
+V-Guard develops a Membership Management Unit (MMU) that keeps track of available vehicle connections and manages membership profiles. The MMU describes a membership profile that contains a set of vehicles as a **booth**. Below illustrates the management of booths (of size 4) when vehicles are communicating via DSRC.
 
 ![](./docs/booths.gif)
 

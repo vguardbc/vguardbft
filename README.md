@@ -1,5 +1,8 @@
 <h1 align="center"> V-Guard: An Efficient Permissioned Blockchain for Achieving Consensus under Dynamic Memberships </h1>
 
+## Appendix
+
+Appendix for gossiping and correctness proofs is available [here](https://github.com/vguardbc/vguardbft/blob/main/docs/ICDE_VGuard_Appendix.pdf) (or go to ./docs/ICDE_VGuard_Appendix.pdf)
 
 ## About V-Guard
 
